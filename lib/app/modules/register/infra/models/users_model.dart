@@ -17,14 +17,14 @@ class UsersModel extends Equatable {
     this.uid,
     this.email,
     this.nome,
-    this.telefone,
+    this.setor,
     this.senha,
     this.imagem,
   });
   String uid;
   String email;
   String nome;
-  String telefone;
+  String setor;
   String senha;
   Uint8List imagem;
 
@@ -32,7 +32,7 @@ class UsersModel extends Equatable {
     String uid,
     String email,
     String nome,
-    String telefone,
+    String setor,
     String senha,
     String imagem,
   }) =>
@@ -40,7 +40,7 @@ class UsersModel extends Equatable {
         uid: uid ?? this.uid,
         email: email ?? this.email,
         nome: nome ?? this.nome,
-        telefone: telefone ?? this.telefone,
+        setor: setor ?? this.setor,
         senha: senha ?? this.senha,
         imagem: imagem ?? this.imagem,
       );
@@ -49,7 +49,7 @@ class UsersModel extends Equatable {
         uid: json["uid"] == null ? null : json["uid"],
         email: json["email"] == null ? null : json["email"],
         nome: json["nome"] == null ? null : json["nome"],
-        telefone: json["telefone"] == null ? null : json["telefone"],
+        setor: json["setor"] == null ? null : json["setor"],
         senha: json["senha"] == null ? null : json["senha"],
         imagem: json["imagem"] == null ? null : json["imagem"],
       );
@@ -58,12 +58,12 @@ class UsersModel extends Equatable {
         "uid": uid == null ? null : uid,
         "email": email == null ? null : email,
         "nome": nome == null ? null : nome,
-        "telefone": telefone == null ? null : telefone,
+        "setor": setor == null ? null : setor,
         "senha": senha == null ? null : senha,
         "imagem": imagem == null ? null : imagem,
       };
 
   @override
   // TODO: implement props
-  List<Object> get props => [uid, email, nome, telefone, senha, imagem];
+  List<Object> get props => [uid, email, nome, setor, senha, imagem];
 }

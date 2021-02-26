@@ -12,8 +12,8 @@ class Validators {
       return Left(Failure('informe uma senha'));
     } else if (users.email == null) {
       return Left(Failure('informe um e-mail'));
-    } else if (users.telefone == null) {
-      return Left(Failure('informe um telefone'));
+    } else if (users.setor == null) {
+      return Left(Failure('informe seu setor'));
     } else {
       return Right(true);
     }

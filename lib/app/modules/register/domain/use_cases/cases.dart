@@ -1,7 +1,7 @@
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:pcm_vibra/app/modules/register/bloc/register_bloc.dart';
 import 'package:pcm_vibra/app/modules/register/domain/use_cases/change_email_case.dart';
-import 'package:pcm_vibra/app/modules/register/domain/use_cases/change_telefone_case.dart';
+import 'package:pcm_vibra/app/modules/register/domain/use_cases/change_setor_case.dart';
 import 'package:pcm_vibra/app/modules/register/domain/use_cases/register_case.dart';
 
 import 'change_nome_case.dart';
@@ -17,7 +17,7 @@ class RegisterCases {
 
   ChangeSenhaCase senhaCase = ChangeSenhaCase();
 
-  ChangeTelefoneCase telefoneCase = ChangeTelefoneCase();
+  ChangeSetorCase SetorCase = ChangeSetorCase();
 
   RegisterCase registerCase = RegisterCase();
 
@@ -49,11 +49,11 @@ class RegisterCases {
     yield* nomeCase.mapUpdateNomeState(currentState, event);
   }
 
-  Stream<RegisterState> changeTelefoneCase(
+  Stream<RegisterState> changeSetorCase(
     final currentState,
-    ChangeTelefone event,
+    ChangeSetor event,
   ) async* {
-    yield* telefoneCase.mapUpdateNomeState(currentState, event);
+    yield* SetorCase.mapSetorState(currentState, event);
   }
 
   Stream<RegisterState> register(

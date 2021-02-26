@@ -20,7 +20,7 @@ class FiretoreRegisterDatasource {
           'uid': usersModel.uid,
           'nome': usersModel.nome,
           'email': usersModel.email,
-          'telefone': usersModel.telefone,
+          'setor': usersModel.setor,
           'imagem': imagem
         })
         .then((value) => print("User Added"))

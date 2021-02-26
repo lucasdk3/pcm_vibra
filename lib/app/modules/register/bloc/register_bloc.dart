@@ -25,8 +25,8 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
       yield* cases.changeEmailCase(state, event);
     } else if (event is ChangeNome) {
       yield* cases.changeNomeCase(state, event);
-    } else if (event is ChangeTelefone) {
-      yield* cases.changeTelefoneCase(state, event);
+    } else if (event is ChangeSetor) {
+      yield* cases.changeSetorCase(state, event);
     } else if (event is ChangeSenha) {
       yield* cases.changeSenhaCase(state, event);
     } else if (event is Register) {

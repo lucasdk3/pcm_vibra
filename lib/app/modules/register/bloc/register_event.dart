@@ -32,13 +32,13 @@ class ChangeEmail extends RegisterEvent {
   List<Object> get props => [email];
 }
 
-class ChangeTelefone extends RegisterEvent {
-  final String telefone;
+class ChangeSetor extends RegisterEvent {
+  final String setor;
 
-  const ChangeTelefone({@required this.telefone}) : assert(telefone != null);
+  const ChangeSetor({@required this.setor}) : assert(setor != null);
 
   @override
-  List<Object> get props => [telefone];
+  List<Object> get props => [setor];
 }
 
 class ChangeSenha extends RegisterEvent {

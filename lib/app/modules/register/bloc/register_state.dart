@@ -19,7 +19,7 @@ class EditingState extends RegisterState {
 
   @override
   String toString() =>
-      'Users: {name: ${users.nome}, email: ${users.email}, senha: ${users.senha}, telefone: ${users.telefone}, error: ${errors.email}}';
+      'Users: {name: ${users.nome}, email: ${users.email}, senha: ${users.senha}, setor: ${users.setor}, error: ${errors.email}}';
 
   @override
   List<Object> get props => [this.users, this.loading, this.errors];

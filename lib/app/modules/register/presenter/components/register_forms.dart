@@ -44,16 +44,6 @@ class _RegisterFormsState extends State<RegisterForms> {
             error: errorEmail != null ? errorEmail : null,
             onChanged: (String field) => bloc.add(ChangeEmail(email: field))),
         forms(
-            field: 'Telefone',
-            formated: [
-              FilteringTextInputFormatter.digitsOnly,
-              TelefoneInputFormatter()
-            ],
-            type: TextInputType.phone,
-            error: errorTelefone != null ? errorTelefone : null,
-            onChanged: (String field) =>
-                bloc.add(ChangeTelefone(telefone: field))),
-        forms(
             field: 'Senha',
             error: errorSenha != null ? errorSenha : null,
             onChanged: (String field) => bloc.add(ChangeSenha(senha: field)))
