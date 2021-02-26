@@ -7,6 +7,9 @@ import 'package:pcm_vibra/app/core/side_bar/infra/list_pages.dart';
 import 'package:pcm_vibra/app/ui/theme/theme.dart';
 import 'package:universal_platform/universal_platform.dart';
 
+import '../../../ui/theme/theme.dart';
+import '../../../ui/theme/theme.dart';
+
 class SideBar extends StatefulWidget {
   final int index;
 
@@ -33,7 +36,7 @@ class _SideBarState extends State<SideBar> {
           isWeb = false;
           return Align(
               alignment: Alignment.topLeft,
-              child: (isOpen) ? drawerOpen() : drawerClose());
+              child: (isOpen) ? drawerBig() : drawerClose());
         }
       },
     );
@@ -56,6 +59,9 @@ class _SideBarState extends State<SideBar> {
                   onTap: () {
                     BlocProvider.of<BaseBloc>(context)
                         .add(UpdatePage(indexPage: i));
+                    setState(() {
+                      isOpen = false;
+                    });
                   },
                   child: page(
                       listPage.listPages[i].page,
@@ -82,19 +88,15 @@ class _SideBarState extends State<SideBar> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            if (isWeb && !isOpen)
-              new Container()
-            else if (!isWeb && isOpen)
-              new Container(),
+            if (isWeb && !isOpen) new Container(),
             Row(
               children: [
                 Align(
-                  alignment: Alignment.center,
                   child: Container(
-                      margin: EdgeInsets.only(left: isWeb && isOpen ? 12 : 0),
+                      margin: EdgeInsets.only(left: isOpen ? 12 : 0),
                       child: Icon(icon, color: iconColor)),
                 ),
-                isWeb && isOpen
+                isOpen
                     ? Container(
                         margin: EdgeInsets.only(
                             left: MediaQuery.of(context).size.width * .005),
@@ -117,43 +119,53 @@ class _SideBarState extends State<SideBar> {
   }
 
   Widget drawerOpen() {
-    return Container(
-      width: 60,
-      color: primary,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 14.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Center(
-                      child: Container(
-                          height: 30.h,
-                          child: Image.asset('assets/logoinst.png')),
-                    )
-                  ],
+    return Material(
+      elevation: 2,
+      child: Container(
+        width: 60,
+        color: primary,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 14.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Center(
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 8.0, right: 8),
+                          child: Container(
+                              height: 24.h,
+                              child: Image.asset(
+                                'assets/logo.png',
+                                filterQuality: FilterQuality.high,
+                                fit: BoxFit.contain,
+                              )),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
-              ),
-              SizedBox(
-                height: 20.h,
-              ),
-              Container(
-                height: 1,
-                width: 50,
-                color: Colors.blue[900],
-              ),
-              SizedBox(
-                height: 20.h,
-              ),
-              pages(),
-            ],
-          ),
-          isWeb ? buttomOpen() : buttomClose()
-        ],
+                SizedBox(
+                  height: 20.h,
+                ),
+                Container(
+                  height: 1,
+                  width: 50,
+                  color: secundary,
+                ),
+                SizedBox(
+                  height: 20.h,
+                ),
+                pages(),
+              ],
+            ),
+            isWeb ? buttomOpen() : buttomClose()
+          ],
+        ),
       ),
     );
   }
@@ -174,24 +186,19 @@ class _SideBarState extends State<SideBar> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(14.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Center(
-                          child: Container(
-                              height: 30.h,
-                              child: Image.asset('assets/logoinst.png')),
-                        ),
-                      ],
+                    child: Center(
+                      child: Container(
+                          height: 30.h,
+                          child: Image.asset(
+                            'assets/logo.png',
+                            fit: BoxFit.fill,
+                          )),
                     ),
-                  ),
-                  SizedBox(
-                    height: 20.h,
                   ),
                   Container(
                     height: 1,
                     width: 150,
-                    color: Colors.blue[900],
+                    color: secundary,
                   ),
                   SizedBox(
                     height: 20.h,

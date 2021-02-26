@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "512976615502",
+    "project_id": "pcmvibra",
+    "storage_bucket": "pcmvibra.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:512976615502:android:e59f18b682934fea736b1f",
+        "android_client_info": {
+          "package_name": "com.example.pcm_vibra"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "512976615502-0rcvn0hq1stvi1oq67g8v1oh3ra81onq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXj23ta3jHrjgI7_AwUT2QpjnqgkTRRL8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "512976615502-0rcvn0hq1stvi1oq67g8v1oh3ra81onq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
